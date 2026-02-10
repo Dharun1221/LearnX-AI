@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #020617, #000);
+  color: #e5e7eb;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: rgba(15, 23, 42, 0.9);
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.15);
+}
+
+h1, h2, h3 {
+  color: #38bdf8;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #cbd5f5;
+}
+
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+input {
+  background: #020617;
+  color: #fff;
+  border: 1px solid #1e293b;
+}
+
+button, .btn {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #020617;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4);
+}
+
+ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+.question {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.question p {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #e0f2fe;
+}
+
+.option {
+  display: block;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.option input {
+  width: auto;
+  margin-right: 8px;
+}
