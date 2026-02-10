@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,26 +8,55 @@
 </head>
 <body>
 
-<div class="container">
-  <h2>Assessment Result</h2>
-  <p id="output"></p>
-</div>
+  <div class="container">
+    <h2>Assessment Result</h2>
+
+<p id="resultText"></p>
+<div id="recommendation"></div>
 
 <script>
   const score = localStorage.getItem("score");
+  let level = "";
+  let rec = "";
 
-  if (score === null) {
-    document.getElementById("output").innerText =
-      "No result found. Please retake the assessment.";
-  } else {
-    let level =
-      score <= 2 ? "Beginner" :
-      score <= 4 ? "Intermediate" : "Advanced";
-
-    document.getElementById("output").innerText =
-      `Your Level: ${level} (Score: ${score}/5)`;
+  if (score <= 2) {
+    level = "Beginner";
+    rec = `
+      <ul>
+        <li>Learn HTML & CSS basics</li>
+        <li>Intro to Programming</li>
+        <li>Daily practice – 30 mins</li>
+      </ul>`;
+  } 
+  else if (score <= 4) {
+    level = "Intermediate";
+    rec = `
+      <ul>
+        <li>JavaScript & DOM manipulation</li>
+        <li>Backend basics</li>
+        <li>Mini projects</li>
+      </ul>`;
+  } 
+  else {
+    level = "Advanced";
+    rec = `
+      <ul>
+        <li>Full Stack Development</li>
+        <li>System Design basics</li>
+        <li>Real-world projects</li>
+      </ul>`;
   }
+
+  document.getElementById("resultText").innerText =
+    `Your Level: ${level} (Score: ${score}/5)`;
+
+  document.getElementById("recommendation").innerHTML =
+    `<h3>Recommended Learning Path</h3>${rec}`;
 </script>
+  </div>
+
+
+
 
 </body>
 </html>
